@@ -1,6 +1,8 @@
 # Employee Data Pipeline with Masking and Transformation
 
-**Employee data** is generated using **Python Faker** and uploaded to **Google Cloud Storage** with Python. This project creates an automated ETL pipeline that masks and transforms sensitive information, such as salary and passwords, using **Google Cloud Data Fusion** before loading the data into **BigQuery** for analysis. The pipeline is orchestrated with **Cloud Composer** and visualized in **Looker**.
+In this project, a table contains detailed information about employees in the company, including sensitive data such as **salary** and **passwords**. To generate an employee report while protecting privacy, sensitive data must be masked and encoded before analysis. 
+
+**Employee data** is generated using **Python Faker** and uploaded to **Google Cloud Storage** with Python. This project creates an automated ETL pipeline that masks and transforms sensitive information using **Google Cloud Data Fusion** before loading the data into **BigQuery** for analysis. The pipeline is orchestrated with **Cloud Composer** and visualized in **Looker**.
 
 ## Tech Stack
 
