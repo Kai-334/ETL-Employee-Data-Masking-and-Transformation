@@ -35,3 +35,7 @@ This project leverages an **end-to-end data pipeline** built with the following 
 
 ![Reporting using Looker Studio](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/65c9645a483f3b49a2c3c80e2b13025247388fb6/Looker%20for%20reporting.png)
 
+## Automation using Composer (Airflow)
+
+![Automation using Composer (Airflow)](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/78038a57c81f9bcf4a572dd443fefbea339bc5cd/Composer%20Airflow.png)
+
