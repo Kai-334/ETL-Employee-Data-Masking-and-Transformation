@@ -8,7 +8,7 @@ This project implements an **automated ETL pipeline** that generates synthetic e
 
 ## Tech Stack & Architecture
 
-![Project Architecture](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/c287a86c3bb583c86e0407508a4344759180c7e1/Project%20Architecture.png)
+![Tech Stack & Architecture](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/c287a86c3bb583c86e0407508a4344759180c7e1/Project%20Architecture.png)
 
 This project leverages an **end-to-end data pipeline** built with the following technologies. The diagram above illustrates how the data flows across these components:
 
@@ -18,3 +18,20 @@ This project leverages an **end-to-end data pipeline** built with the following 
 - **Google BigQuery**: Stores the transformed and cleaned data, enabling efficient querying and analysis.
 - **Looker**: Provides intuitive data visualisation and reporting, helping stakeholders gain insights from the employee data.
 - **Cloud Composer (Apache Airflow)**: Orchestrates and automates the entire end-to-end data pipeline, ensuring smooth workflows from data generation to final reporting.
+
+## Data Fusion Pipeline
+
+![Data Fusion Pipeline](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/65c9645a483f3b49a2c3c80e2b13025247388fb6/Cloud%20Data%20Fusion%20Pipeline.png)
+
+## Wrangler: Mask and Encrypt Sensitive Data 
+
+![Wrangler: Mask and Encrypt Sensitive Data ](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/65c9645a483f3b49a2c3c80e2b13025247388fb6/Mask%20and%20Encrypt%20Sensitive%20Data%20in%20Data%20Fusion.png)
+
+## Store Transformed Data in BigQuery
+
+![Store Transformed Data in BigQuery](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/65c9645a483f3b49a2c3c80e2b13025247388fb6/Store%20Transformed%20Data%20in%20BigQuery.png)
+
+## Reporting using Looker Studio
+
+![Reporting using Looker Studio](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/65c9645a483f3b49a2c3c80e2b13025247388fb6/Looker%20for%20reporting.png)
+
