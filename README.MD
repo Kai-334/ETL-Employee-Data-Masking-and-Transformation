@@ -1,26 +1,20 @@
-# Employee Data Pipeline with Masking and Transformation
+# Automated Employee Data Pipeline with Privacy Masking and Transformation
 
-In this project, a table contains detailed information about employees in the company, including sensitive data such as **salary** and **passwords**. To generate an employee report while protecting privacy, sensitive data must be masked and encoded before analysis. 
+## Problem Statement
+Managers and department heads need employee information, such as names, job titles, and departments, for reporting and decision-making. However, raw data contains sensitive details like salaries and passwords, which must be protected to comply with privacy regulations. A solution is needed to provide the necessary information while ensuring sensitive data remains secure and inaccessible during analysis.
 
-**Employee data** is generated using **Python Faker** and uploaded to **Google Cloud Storage** with Python. This project creates an automated ETL pipeline that masks and transforms sensitive information using **Google Cloud Data Fusion** before loading the data into **BigQuery** for analysis. The pipeline is orchestrated with **Cloud Composer** and visualized in **Looker**.
+## Solution Overview
+This project implements an **automated ETL pipeline** that generates synthetic employee data using **Python Faker** and securely uploads it to **Google Cloud Storage**. Sensitive data, including salaries and passwords, is **masked** and **transformed** using **Google Cloud Data Fusion**, ensuring compliance with data privacy standards before it is loaded into **BigQuery** for analysis. The pipeline is orchestrated with **Cloud Composer (Apache Airflow)**, ensuring a seamless process from data generation to analysis. Finally, managers and department heads can access insights and reports through **Looker**, with sensitive information securely masked to protect employee privacy.
 
-## Tech Stack
-
-This project leverages the following technologies:
-
-- **Python**: Used for data extraction.
-- **Cloud Composer (Apache Airflow)**: Orchestrates and automates the data pipeline.
-- **Google Cloud Data Fusion**: Transforms and masks sensitive data.
-- **Google BigQuery**: A data warehouse used for querying and analysis.
-- **Google Cloud Storage**: Stores raw and transformed data.
-- **Looker**: Provides data visualization and reporting.
-
-## Architecture
+## Tech Stack & Architecture
 
 ![Project Architecture](https://github.com/Kai-334/Data-Transformation-Masking-with-Data-Fusion-Airflow-and-BigQuery/blob/c287a86c3bb583c86e0407508a4344759180c7e1/Project%20Architecture.png)
 
-### Description:
-1. **Python** extracts data and saves it to **Cloud Storage**.
-2. **Cloud Data Fusion** masks and transforms the data, then loads it into **BigQuery**.
-3. **Looker** visualizes the data from **BigQuery**.
-4. **Airflow** (via **Cloud Composer**) automates and manages the entire process.
+This project leverages an **end-to-end data pipeline** built with the following technologies. The diagram above illustrates how the data flows across these components:
+
+- **Python**: Used for generating synthetic employee data with the Faker library, which is then uploaded to Google Cloud Storage.
+- **Google Cloud Storage**: Acts as the raw data repository for employee information.
+- **Google Cloud Data Fusion**: Handles data transformation processes, including masking and encrypting sensitive employee details, ensuring compliance with data privacy standards.
+- **Google BigQuery**: Stores the transformed and cleaned data, enabling efficient querying and analysis.
+- **Looker**: Provides intuitive data visualisation and reporting, helping stakeholders gain insights from the employee data.
+- **Cloud Composer (Apache Airflow)**: Orchestrates and automates the entire end-to-end data pipeline, ensuring smooth workflows from data generation to final reporting.
