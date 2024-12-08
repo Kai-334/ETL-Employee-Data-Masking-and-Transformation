@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
-from airflow.utils.dates import days_ago
 from airflow.providers.google.cloud.operators.datafusion import CloudDataFusionStartPipelineOperator
 
 default_args = {
@@ -11,13 +10,10 @@ default_args = {
     'email': ['lowszekai1@gmail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
-    'retries': 1,
+    'retries': 0,
     'retry_delay': timedelta(minutes=5),
 }
 
-# Creates a DAG object named employee_data
-# passes the default_args dictionary to the DAG
-# Airflow will not backfill missing runs for previous days
 dag = DAG('employee_data',
           default_args=default_args,
           description='Runs an external Python script',
@@ -25,19 +21,20 @@ dag = DAG('employee_data',
           catchup=False)
 
 with dag:
-    # Executes a bash command to run a python script at a specified location
+    # Task 1: Executes a bash command to run a Python script
     run_script_task = BashOperator(
         task_id='extract_data',
         bash_command='python /home/airflow/gcs/dags/scripts/extract.py',
     )
 
-    # Triggers a Cloud Data Fusion pipeline
+    # Task 2: Triggers a Cloud Data Fusion pipeline with custom timeout
     start_pipeline = CloudDataFusionStartPipelineOperator(
         location="us-central1",
         pipeline_name="etl-pipeline-2",
         instance_name="datafusion-dev",
         task_id="start_datafusion_pipeline",
+        pipeline_timeout=600,  # Timeout set to 10 minutes
     )
 
-    # Sets a dependency between tasks
+    # Set dependencies between tasks
     run_script_task >> start_pipeline
